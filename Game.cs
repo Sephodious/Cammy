@@ -23,6 +23,7 @@ namespace Cammy
         public static ref float FoVDelta => ref *(float*)foVDeltaPtr; // 0.08726646751
 
         public static float cameraHeightOffset = 0;
+        public static float cameraWidthOffset = 0;
         private delegate void GetCameraPositionDelegate(IntPtr camera, IntPtr target, float* vectorPosition, bool swapPerson);
         private static Hook<GetCameraPositionDelegate> GetCameraPositionHook;
         private static void GetCameraPositionDetour(IntPtr camera, IntPtr target, float* vectorPosition, bool swapPerson)
@@ -31,6 +32,7 @@ namespace Cammy
             {
                 GetCameraPositionHook.Original(camera, target, vectorPosition, swapPerson);
                 vectorPosition[1] += cameraHeightOffset;
+                vectorPosition[2] += cameraWidthOffset;
             }
             else
             {

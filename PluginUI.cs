@@ -294,6 +294,7 @@ namespace Cammy
             ImGui.Spacing();
 
             ResetSliderFloat("Camera Height Offset", ref preset.HeightOffset, -1, 1, 0, "%.2f");
+            ResetSliderFloat("Camera Width Offset", ref preset.WidthOffset, -1, 1, 0, "%.2f");
             ResetSliderFloat("Tilt", ref preset.Tilt, (float)-Math.PI, (float)Math.PI, 0, "%f");
             ResetSliderFloat("Look at Height Offset", ref preset.LookAtHeightOffset, -10, 10, Game.GetDefaultLookAtHeightOffset, "%f");
 

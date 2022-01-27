@@ -29,6 +29,7 @@ namespace Cammy
         public float MaxVRotation = 0.785398f;
 
         public float HeightOffset = 0;
+        public float WidthOffset = 0;
         public float Tilt = 0;
         public float LookAtHeightOffset = Game.GetDefaultLookAtHeightOffset();
         public int ConditionSet = -1;
@@ -65,6 +66,7 @@ namespace Cammy
             camera->MaxVRotation = MaxVRotation;
 
             Game.cameraHeightOffset = HeightOffset;
+            Game.cameraWidthOffset = WidthOffset;
             camera->Tilt = Tilt;
             camera->LookAtHeightOffset = LookAtHeightOffset;
         }
@@ -91,6 +93,7 @@ namespace Cammy
             public float MaxVRotation = 0.785398f;
 
             public float CenterHeightOffset = 0f;
+            public float CenterWidthOffset = 0f;
         }
     }
 
